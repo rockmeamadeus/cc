@@ -14,9 +14,9 @@ public class DispacherTest {
         Dispatcher dispatcher = new Dispatcher();
 
         System.out.println("Cliente llamando ...");
-        dispatcher.dispatch();
+        dispatcher.dispatchCall();
         System.out.println("Cliente llamando ...");
-        dispatcher.dispatch();
+        dispatcher.dispatchCall();
 
     }
 
@@ -37,7 +37,7 @@ public class DispacherTest {
         for (int i = 0; i < 10; i++) {
             Runnable task1 = () -> {
                 System.out.println("Cliente llamando ...");
-                dispatcher.dispatch();
+                dispatcher.dispatchCall();
             };
             executorService.execute(task1);
         }
@@ -64,7 +64,7 @@ public class DispacherTest {
         for (int i = 0; i < 11; i++) {
             Runnable task1 = () -> {
                 System.out.println("Cliente llamando ...");
-                dispatcher.dispatch();
+                dispatcher.dispatchCall();
             };
             executorService.execute(task1);
         }

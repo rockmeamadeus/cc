@@ -16,7 +16,7 @@ public class Dispatcher {
         director.setNextChain(empleado);
     }
 
-    public void dispatch() {
+    public void dispatchCall() {
         empleado.atenderLLamada();
     }
 
