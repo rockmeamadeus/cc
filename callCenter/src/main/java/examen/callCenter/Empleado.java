@@ -7,37 +7,43 @@ public abstract class Empleado implements EmpleadoChain {
 
     protected PriorityBlockingQueue<Integer> queue = new PriorityBlockingQueue<>();
 
+    protected Integer priority;
 
     private EmpleadoChain empleadoChain;
 
     public void atenderLLamada() {
 
-        if (this.puedeTomarLaLLamada()) {
-            this.responderConsultasAlCliente();
+        if (puedoResponderLlamada()) {
+            responderConsultasAlCliente();
         } else {
             empleadoChain.atenderLLamada();
         }
     }
 
+
     void responderConsultasAlCliente() {
 
         try {
-            System.out.println(this.getClass().getSimpleName() + " atendiendo llamada...");
-            Thread.sleep(ThreadLocalRandom.current().nextInt(5000, 10000 + 1));
+            System.out.println(getClass().getSimpleName() + " atendiendo llamada...");
+            Thread.sleep(ThreadLocalRandom.current().nextInt(5000, 10001));
         } catch (InterruptedException e) {
             e.printStackTrace();
         } finally {
             this.disponibilizarEmpleadoNuevamente();
-            System.out.println(this.getClass().getSimpleName() + " disponible de nuevo para recibir llamadas.");
+            System.out.println(getClass().getSimpleName() + " disponible de nuevo para recibir llamadas.");
         }
     }
+
 
     public void setNextChain(EmpleadoChain nextChain) {
         empleadoChain = nextChain;
     }
 
-    abstract public boolean puedeTomarLaLLamada();
+    public boolean puedoResponderLlamada() {
+        return priority.equals(queue.peek()) && queue.poll() != null;
+    }
 
-    abstract public void disponibilizarEmpleadoNuevamente();
-
+    public void disponibilizarEmpleadoNuevamente() {
+        queue.add(priority);
+    }
 }
