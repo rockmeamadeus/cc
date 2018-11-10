@@ -1,8 +1,12 @@
 package examen.callCenter;
 
+import java.util.concurrent.PriorityBlockingQueue;
 import java.util.concurrent.ThreadLocalRandom;
 
 public abstract class Empleado implements EmpleadoChain {
+
+    protected PriorityBlockingQueue<Integer> queue = new PriorityBlockingQueue<>();
+
 
     private EmpleadoChain empleadoChain;
 

@@ -1,11 +1,7 @@
 package examen.callCenter;
 
-import java.util.concurrent.ArrayBlockingQueue;
-import java.util.concurrent.BlockingQueue;
-
 public class Operador extends Empleado {
 
-    private BlockingQueue<Integer> queue = new ArrayBlockingQueue(7, true);
 
     public Operador() {
         queue.add(1);
