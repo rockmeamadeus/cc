@@ -37,13 +37,13 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="3691" />
+          <entry key="java" value="3702" />
           <entry key="xml" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="3691" />
+          <entry key="JAVA" value="3702" />
           <entry key="XML" value="3" />
         </counts>
       </usages-collector>
@@ -54,8 +54,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/examen/callCenter/DispacherTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4">
-              <caret line="76" column="74" selection-start-line="76" selection-start-column="54" selection-end-line="76" selection-end-column="74" />
+            <state relative-caret-position="225">
+              <caret line="89" column="10" selection-start-line="89" selection-start-column="10" selection-end-line="89" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -285,7 +285,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="pom&#9;FILE&#9;file://C:/Users/avaca/Documents/prueba2/callCenter/pom.xml&#10;App&#9;FILE&#9;file://C:/Users/avaca/Documents/prueba2/callCenter/src/main/java/examen/callCenter/App.java" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542001723132" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542002418711" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
@@ -434,15 +434,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="DispacherTest_atender10LLamadasSimultaneas - 2018.11.12 at 02h 21m 19s.xml">
-      <configuration name="DispacherTest.atender10LLamadasSimultaneas" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="DispacherTest_atender10LLamadasSimultaneas - 2018.11.12 at 02h 26m 44s.xml">
-      <configuration name="DispacherTest.atender10LLamadasSimultaneas" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="DispacherTest_atender10LLamadasSimultaneas - 2018.11.12 at 02h 28m 04s.xml">
-      <configuration name="DispacherTest.atender10LLamadasSimultaneas" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="DispacherTest_atender10LLamadasSimultaneas - 2018.11.12 at 02h 28m 24s.xml">
       <configuration name="DispacherTest.atender10LLamadasSimultaneas" configurationId="JUnit" />
     </history-entry>
@@ -463,6 +454,15 @@
     </history-entry>
     <history-entry file="DispacherTest_atender10LLamadasSimultaneas - 2018.11.12 at 02h 44m 11s.xml">
       <configuration name="DispacherTest.atender10LLamadasSimultaneas" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DispacherTest_atender11LLamadasSimultaneas - 2018.11.12 at 02h 47m 04s.xml">
+      <configuration name="DispacherTest.atender11LLamadasSimultaneas" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DispacherTest_atender11LLamadasSimultaneas - 2018.11.12 at 02h 47m 41s.xml">
+      <configuration name="DispacherTest.atender11LLamadasSimultaneas" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DispacherTest_atender11LLamadasSimultaneas - 2018.11.12 at 02h 48m 44s.xml">
+      <configuration name="DispacherTest.atender11LLamadasSimultaneas" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -668,8 +668,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/examen/callCenter/DispacherTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4">
-          <caret line="76" column="74" selection-start-line="76" selection-start-column="54" selection-end-line="76" selection-end-column="74" />
+        <state relative-caret-position="225">
+          <caret line="89" column="10" selection-start-line="89" selection-start-column="10" selection-end-line="89" selection-end-column="10" />
         </state>
       </provider>
     </entry>
