@@ -2,9 +2,14 @@ package examen.callCenter;
 
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.Future;
+
+import static junit.framework.TestCase.assertTrue;
 
 public class DispacherTest {
 
@@ -28,22 +33,36 @@ public class DispacherTest {
      * @throws InterruptedException the interruptedException thrown.
      */
     @Test
-    public void atender10LLamadasSimultaneas() throws InterruptedException {
+    public void atender10LLamadasSimultaneas() throws InterruptedException, ExecutionException {
 
         ExecutorService executorService = Executors.newFixedThreadPool(10);
 
         Dispatcher dispatcher = new Dispatcher();
+
+        List<Future<?>> futures = new ArrayList<>();
+
 
         for (int i = 0; i < 10; i++) {
             Runnable task1 = () -> {
                 System.out.println("Cliente llamando ...");
                 dispatcher.dispatchCall();
             };
-            executorService.execute(task1);
+            Future<?> f = executorService.submit(task1);
+            futures.add(f);
+
         }
 
-        executorService.shutdown();
-        executorService.awaitTermination(1, TimeUnit.HOURS);
+        // A) Await all runnables to be done (blocking)
+        for (Future<?> future : futures)
+            future.get(); // get will block until the future is done
+
+        // B) Check if all runnables are done (non-blocking)
+        boolean allDone = true;
+        for (Future<?> future : futures) {
+            allDone &= future.isDone(); // check if future is done
+        }
+
+        assertTrue(allDone);
 
     }
 
@@ -55,22 +74,34 @@ public class DispacherTest {
      * @throws InterruptedException the interruptedException thrown.
      */
     @Test
-    public void atender11LLamadasSimultaneas() throws InterruptedException {
+    public void atender11LLamadasSimultaneas() throws InterruptedException, ExecutionException {
 
         ExecutorService executorService = Executors.newFixedThreadPool(10);
 
         Dispatcher dispatcher = new Dispatcher();
 
-        for (int i = 0; i < 11; i++) {
+        List<Future<?>> futures = new ArrayList<>();
+
+        for (int i = 0; i < 10; i++) {
             Runnable task1 = () -> {
                 System.out.println("Cliente llamando ...");
                 dispatcher.dispatchCall();
             };
-            executorService.execute(task1);
+            Future<?> f = executorService.submit(task1);
+            futures.add(f);
         }
 
-        executorService.shutdown();
-        executorService.awaitTermination(1, TimeUnit.HOURS);
+        // A) Await all runnables to be done (blocking)
+        for (Future<?> future : futures)
+            future.get(); // get will block until the future is done
+
+        // B) Check if all runnables are done (non-blocking)
+        boolean allDone = true;
+        for (Future<?> future : futures) {
+            allDone &= future.isDone(); // check if future is done
+        }
+
+        assertTrue(allDone);
 
     }
 }
